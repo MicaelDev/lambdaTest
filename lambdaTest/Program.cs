@@ -15,13 +15,18 @@ namespace lambdaTest
 
         static void Main(string[] args)
         {
+            //Exemplo 01 de Lambda
             int tamanhoNome = tamanhoTextoLambda("Micael Quilião Gerson");
             Console.WriteLine("Micael Quilião Gerson tem " + tamanhoNome + " caracteres.");
 
+            //Exemplo 02 de Lambda
             IEnumerable<int> numeros = new List<int> { 2, 3, 4, 5 };
-
             var quadradoNumeros = numeros.Select(quadrado);
             Console.WriteLine(string.Join(", ", quadradoNumeros));
+
+            //Exemplo 01 de Lambda (Func com mais de um parâmetro)
+            Func<int, int, int, int> somaNumeros = ((num1, num2, num3) => num1 + num2 + num3);
+            Console.WriteLine(somaNumeros(10,10,10));
 
             Console.ReadLine();
         }
